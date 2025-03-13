@@ -125,11 +125,12 @@ def generate_report_for_teacher(majority_emotion, subject, grade):
     response = requests.post(
         url="https://openrouter.ai/api/v1/chat/completions",
         data=json.dumps({
-            "models": ["nousresearch/nous-capybara-7b", "mistralai/mistral-7b-instruct","huggingfaceh4/zephyr-7b-beta"],
+            "models": "nousresearch/nous-capybara-7b",
             "messages": [{"role": "user", "content": f"You are teaching the subject {subject} to students in {grade} online. Given that the emotion most commonly detected from your students was {majority_emotion}, generate advice for better instruction and teaching."}],
-            "route": 'fallback'
+            "stream": False
         }),
-        headers={"Authorization": f"Bearer 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"}
+        headers={"Authorization": f"Bearer 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",
+                "Content-Type": "application/json"}
     )
     r_json = response.json()
     #content = r_json['choices'][0]['message']['content'].strip()
