@@ -129,15 +129,12 @@ def generate_report_for_teacher(majority_emotion, subject, grade):
             "Content-Type": "application/json",
         },
          data=json.dumps({
-             "model": "google/gemma-3-27b-it:free",
-             "messages": [{
+             "model": "deepseek/deepseek-r1:free",
+             "messages": [
+                 {
                  "role": "user", 
-                 "content": [
-                     {"type": "text", 
-                      "text": f"You are teaching the subject {subject} to students in {grade} online. Given that the emotion most commonly detected from your students was {majority_emotion}, generate advice for better instruction and teaching."
-                    }
-                 ]
-                }
+                 "content": f"You are teaching the subject {subject} to students in {grade} online. Given that the emotion most commonly detected from your students was {majority_emotion}, generate advice for better instruction and teaching."
+                 }
             ],
          })
      )
