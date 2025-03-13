@@ -129,7 +129,7 @@ def generate_report_for_teacher(majority_emotion, subject, grade):
             "messages": [{"role": "user", "content": f"You are teaching the subject {subject} to students in {grade} online. Given that the emotion most commonly detected from your students was {majority_emotion}, generate advice for better instruction and teaching."}],
             "route": 'fallback'
         }),
-        headers={"Authorization": f"Bearer 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"}
+        headers={"Authorization": f"Bearer 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"}
     )
     r_json = response.json()
     #content = r_json['choices'][0]['message']['content'].strip()
