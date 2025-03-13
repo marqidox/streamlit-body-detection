@@ -132,8 +132,8 @@ def generate_report_for_teacher(majority_emotion, subject, grade):
         headers={"Authorization": f"Bearer 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"}
     )
     r_json = response.json()
-    content = r_json['choices'][0]['message']['content'].strip()
-    return content
+    #content = r_json['choices'][0]['message']['content'].strip()
+    return r_json
 
 # program started and captured new data
 if finished:
