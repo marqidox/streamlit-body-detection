@@ -1,2 +1,10 @@
 libgl1-mesa-glx
 pkg-config
+ffmpeg
+libavcodec-dev
+libavformat-dev
+libavdevice-dev
+libavutil-dev
+libavfilter-dev
+libswscale-dev
+libswresample-dev
